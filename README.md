@@ -1,2 +1,2 @@
 # sql_netology
-DZ_netology_SQL
+SQL и работа с базами данных
