@@ -103,16 +103,3 @@ FROM customer c
     split_part(c.email, '@', 1) AS "E-mail_before_@",
     split_part(c.email, '@', 2) AS "E-mail_after_@"
   FROM customer c
-
-
---ЗАДАНИЕ №4
---Доработайте запрос из предыдущего задания, скорректируйте значения в новых колонках: 
---первая буква строки должна быть заглавной, остальные строчными.
-
-SELECT 
-  c.customer_id, c.email, 
-  INITCAP(LEFT(c.email, POSITION('@' IN c.email) - 1)) AS "E-mail_before_@",
-  INITCAP(RIGHT(c.email, LENGTH(c.email) - POSITION('@' IN c.email))) AS "E-mail_After_@"
-FROM customer c
-
--- не смог добиться маленькой буквы после точек в части адреса..INITCAP не подходит похоже..
